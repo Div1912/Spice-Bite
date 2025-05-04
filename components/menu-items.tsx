@@ -26,7 +26,7 @@ const menuItems = [
     name: "Paneer Tikka Masala",
     description: "Grilled cottage cheese in a spiced tomato gravy",
     price: 249.99,
-    image: "https://mytastycurry.com/wp-content/uploads/2017/05/paneer-tikka-masala-11.jpg",
+    image: "https://images.unsplash.com/photo-1567188040759-fb8a883dc6d6?q=80&w=800",
     category: "north-indian",
   },
   {
@@ -34,7 +34,7 @@ const menuItems = [
     name: "Dal Makhani",
     description: "Black lentils and kidney beans in a creamy butter sauce",
     price: 199.99,
-    image: "https://www.sharmispassions.com/wp-content/uploads/2012/05/dal-makhani7.jpg",
+    image: "https://images.unsplash.com/photo-1546833998-877b37c2e5c6?q=80&w=800",
     category: "north-indian",
   },
   // South Indian
@@ -43,7 +43,7 @@ const menuItems = [
     name: "Masala Dosa",
     description: "Crispy rice crepe filled with spiced potato filling",
     price: 149.99,
-    image: "https://revi.b-cdn.net/wp-content/uploads/2017/03/masala-dosa-vert.jpg",
+    image: "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?q=80&w=800",
     category: "south-indian",
   },
   {
@@ -51,7 +51,7 @@ const menuItems = [
     name: "Idli Sambar",
     description: "Steamed rice cakes served with lentil soup and chutney",
     price: 129.99,
-    image: "https://vaya.in/recipes/wp-content/uploads/2018/02/Idli-and-Sambar-1.jpg",
+    image: "https://images.unsplash.com/photo-1589301761966-e6506b293111?q=80&w=800",
     category: "south-indian",
   },
   {
@@ -59,7 +59,7 @@ const menuItems = [
     name: "Chettinad Chicken",
     description: "Spicy chicken curry with aromatic spices",
     price: 279.99,
-    image: "https://madscookhouse.com/wp-content/uploads/2021/02/Chicken-Chettinad.jpg",
+    image: "https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?q=80&w=800",
     category: "south-indian",
   },
   // Biryani
@@ -93,7 +93,7 @@ const menuItems = [
     name: "Gulab Jamun",
     description: "Deep-fried milk solids soaked in sugar syrup",
     price: 99.99,
-    image: "https://prashantcorner.com/cdn/shop/files/DakGulabJamunSR-2.jpg?v=1718083866&width=990",
+    image: "https://images.unsplash.com/photo-1601303516534-bf0b1eb70df0?q=80&w=800",
     category: "desserts",
   },
   {
@@ -101,7 +101,7 @@ const menuItems = [
     name: "Rasgulla",
     description: "Soft cheese balls soaked in light sugar syrup",
     price: 99.99,
-    image: "https://www.palatesdesire.com/wp-content/uploads/2015/08/Rasgulla_recipe@Palates_desire-scaled.jpg",
+    image: "https://images.unsplash.com/photo-1605197161470-5d2a9af0ac7e?q=80&w=800",
     category: "desserts",
   },
   {
@@ -109,7 +109,7 @@ const menuItems = [
     name: "Kulfi",
     description: "Traditional Indian ice cream with nuts and cardamom",
     price: 129.99,
-    image: "https://www.archanaskitchen.com/images/archanaskitchen/Indian_Sweets_Mithai/Kesar_Pista_Kulfi_Recipe_Indian_Ice_Cream-1-2.jpg",
+    image: "https://images.unsplash.com/photo-1590080875515-8a3a8dc5735e?q=80&w=800",
     category: "desserts",
   },
 ]

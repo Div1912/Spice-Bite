@@ -1,44 +1,38 @@
 "use client"
 
-import { createContext, useContext, useState, useEffect, type ReactNode } from "react"
+import type React from "react"
 
-interface CartItem {
+import { createContext, useContext, useEffect, useState } from "react"
+
+type CartItem = {
   id: number
   name: string
   price: number
-  image: string
+  image: string | null
   quantity: number
 }
 
-interface CartContextType {
-  cart: CartItem[]
+type CartContextType = {
+  items: CartItem[]
   addToCart: (item: CartItem) => void
-  removeFromCart: (id: number) => void
-  updateQuantity: (id: number, quantity: number) => void
+  removeFromCart: (itemId: number) => void
+  updateQuantity: (itemId: number, quantity: number) => void
   clearCart: () => void
+  totalItems: number
+  subtotal: number
 }
 
-const CartContext = createContext<CartContextType>({
-  cart: [],
-  addToCart: () => {},
-  removeFromCart: () => {},
-  updateQuantity: () => {},
-  clearCart: () => {},
-})
+const CartContext = createContext<CartContextType | undefined>(undefined)
 
-export const useCart = () => useContext(CartContext)
+export function CartProvider({ children }: { children: React.ReactNode }) {
+  const [items, setItems] = useState<CartItem[]>([])
 
-export const CartProvider = ({ children }: { children: ReactNode }) => {
-  const [cart, setCart] = useState<CartItem[]>([])
-  const [mounted, setMounted] = useState(false)
-
-  // Load cart from localStorage on mount
+  // Load cart from localStorage on initial render
   useEffect(() => {
-    setMounted(true)
     const savedCart = localStorage.getItem("cart")
     if (savedCart) {
       try {
-        setCart(JSON.parse(savedCart))
+        setItems(JSON.parse(savedCart))
       } catch (error) {
         console.error("Failed to parse cart from localStorage:", error)
       }
@@ -47,53 +41,62 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
 
   // Save cart to localStorage whenever it changes
   useEffect(() => {
-    if (mounted) {
-      localStorage.setItem("cart", JSON.stringify(cart))
-    }
-  }, [cart, mounted])
+    localStorage.setItem("cart", JSON.stringify(items))
+  }, [items])
 
   const addToCart = (item: CartItem) => {
-    setCart((prevCart) => {
-      const existingItem = prevCart.find((cartItem) => cartItem.id === item.id)
-
+    setItems((prevItems) => {
+      const existingItem = prevItems.find((i) => i.id === item.id)
       if (existingItem) {
-        return prevCart.map((cartItem) =>
-          cartItem.id === item.id ? { ...cartItem, quantity: cartItem.quantity + item.quantity } : cartItem,
-        )
+        return prevItems.map((i) => (i.id === item.id ? { ...i, quantity: i.quantity + item.quantity } : i))
       } else {
-        return [...prevCart, item]
+        return [...prevItems, item]
       }
     })
   }
 
-  const removeFromCart = (id: number) => {
-    setCart((prevCart) => prevCart.filter((item) => item.id !== id))
+  const removeFromCart = (itemId: number) => {
+    setItems((prevItems) => prevItems.filter((item) => item.id !== itemId))
   }
 
-  const updateQuantity = (id: number, quantity: number) => {
+  const updateQuantity = (itemId: number, quantity: number) => {
     if (quantity <= 0) {
-      removeFromCart(id)
+      removeFromCart(itemId)
       return
     }
 
-    setCart((prevCart) => prevCart.map((item) => (item.id === id ? { ...item, quantity } : item)))
+    setItems((prevItems) => prevItems.map((item) => (item.id === itemId ? { ...item, quantity } : item)))
   }
 
   const clearCart = () => {
-    setCart([])
+    setItems([])
   }
+
+  const totalItems = items.reduce((total, item) => total + item.quantity, 0)
+
+  const subtotal = items.reduce((total, item) => total + item.price * item.quantity, 0)
 
   return (
     <CartContext.Provider
       value={{
-        cart,
+        items,
         addToCart,
         removeFromCart,
         updateQuantity,
         clearCart,
+        totalItems,
+        subtotal,
       }}
     >
       {children}
     </CartContext.Provider>
   )
+}
+
+export const useCart = () => {
+  const context = useContext(CartContext)
+  if (context === undefined) {
+    throw new Error("useCart must be used within a CartProvider")
+  }
+  return context
 }

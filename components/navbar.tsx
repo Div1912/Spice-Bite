@@ -19,7 +19,7 @@ import {
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
-  const { cart } = useCart()
+  const { items: cart } = useCart()
   const pathname = usePathname()
   const [isScrolled, setIsScrolled] = useState(false)
   const [mounted, setMounted] = useState(false)
@@ -48,7 +48,7 @@ export default function Navbar() {
     return null
   }
 
-  const totalItems = cart.reduce((total, item) => total + item.quantity, 0)
+  const totalItems = cart?.length ? cart.reduce((total, item) => total + item.quantity, 0) : 0
 
   return (
     <header
@@ -95,7 +95,7 @@ export default function Navbar() {
             </Button>
           </Link>
 
-          {user && (
+          {mounted && user ? (
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <Button variant="outline" size="icon" className="border-primary/20">
@@ -118,13 +118,11 @@ export default function Navbar() {
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
-          )}
-
-          {!user && (
+          ) : mounted ? (
             <Button asChild className="bg-black text-white hover:bg-black/80">
               <Link href="/login">Sign In</Link>
             </Button>
-          )}
+          ) : null}
 
           <Button
             variant="ghost"

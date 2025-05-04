@@ -19,7 +19,7 @@ import { useOrder } from "@/context/order-context"
 import { useNotification } from "@/context/notification-context"
 
 export default function CheckoutPage() {
-  const { cart, clearCart } = useCart()
+  const { items: cart, clearCart } = useCart()
   const { toast } = useToast()
   const router = useRouter()
   const [isLoading, setIsLoading] = useState(false)

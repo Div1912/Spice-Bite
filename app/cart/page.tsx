@@ -13,7 +13,7 @@ import { useAuth } from "@/context/auth-context"
 import { useRouter } from "next/navigation"
 
 export default function CartPage() {
-  const { cart, updateQuantity, removeFromCart, clearCart } = useCart()
+  const { items: cart, updateQuantity, removeFromCart, clearCart } = useCart()
   const { toast } = useToast()
   const [mounted, setMounted] = useState(false)
   const { user } = useAuth()
