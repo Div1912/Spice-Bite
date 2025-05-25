@@ -26,7 +26,7 @@ const menuItems = [
     name: "Paneer Tikka Masala",
     description: "Grilled cottage cheese in a spiced tomato gravy",
     price: 249.99,
-    image: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fkannanskitchen.com%2Fpaneer-tikka-masala%2F&psig=AOvVaw1wyrZcr_BtvfwZuLFJ7qpu&ust=1748244577163000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCLCB0NmMvo0DFQAAAAAdAAAAABAE",
+    image: "https://kannanskitchen.com/wp-content/uploads/2023/01/DSC_4737-500x500.jpg",
     category: "north-indian",
   },
   {
