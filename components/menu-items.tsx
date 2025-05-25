@@ -34,7 +34,7 @@ const menuItems = [
     name: "Dal Makhani",
     description: "Black lentils and kidney beans in a creamy butter sauce",
     price: 199.99,
-    image: "https://images.unsplash.com/photo-1546833998-877b37c2e5c6?q=80&w=800",
+    image: "https://rainbowplantlife.com/wp-content/uploads/2021/06/Dal-Makhani-edited-photos-5-of-6.jpg",
     category: "north-indian",
   },
   // South Indian
