@@ -43,7 +43,7 @@ const menuItems = [
     name: "Masala Dosa",
     description: "Crispy rice crepe filled with spiced potato filling",
     price: 149.99,
-    image: "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?q=80&w=800",
+    image: "https://www.cookwithmanali.com/wp-content/uploads/2020/05/Masala-Dosa.jpg",
     category: "south-indian",
   },
   {
@@ -51,7 +51,7 @@ const menuItems = [
     name: "Idli Sambar",
     description: "Steamed rice cakes served with lentil soup and chutney",
     price: 129.99,
-    image: "https://images.unsplash.com/photo-1589301761966-e6506b293111?q=80&w=800",
+    image: "https://static.toiimg.com/thumb/msid-113810989,width-1280,height-720,resizemode-4/113810989.jpg",
     category: "south-indian",
   },
   {
@@ -93,7 +93,7 @@ const menuItems = [
     name: "Gulab Jamun",
     description: "Deep-fried milk solids soaked in sugar syrup",
     price: 99.99,
-    image: "https://images.unsplash.com/photo-1601303516534-bf0b1eb70df0?q=80&w=800",
+    image: "https://www.spiceupthecurry.com/wp-content/uploads/2020/08/gulab-jamun-recipe-2.jpg",
     category: "desserts",
   },
   {
@@ -101,7 +101,7 @@ const menuItems = [
     name: "Rasgulla",
     description: "Soft cheese balls soaked in light sugar syrup",
     price: 99.99,
-    image: "https://images.unsplash.com/photo-1605197161470-5d2a9af0ac7e?q=80&w=800",
+    image: "https://cdn1.foodviva.com/static-content/food-images/desserts-sweets-recipes/rasgulla/rasgulla.jpg",
     category: "desserts",
   },
   {
@@ -109,7 +109,7 @@ const menuItems = [
     name: "Kulfi",
     description: "Traditional Indian ice cream with nuts and cardamom",
     price: 129.99,
-    image: "https://images.unsplash.com/photo-1590080875515-8a3a8dc5735e?q=80&w=800",
+    image: "https://eatsbyramya.com/wp-content/uploads/2022/07/DSC_0027-2-scaled.jpg",
     category: "desserts",
   },
 ]
